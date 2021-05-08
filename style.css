@@ -1,24 +1,38 @@
-.moon {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border: 1px solid rgba(0,0,0,0.3);
-    border-radius: 50%;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #d8d8d8;
-    box-shadow: inset 15px 15px 10px #999;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.dog {
-    width: auto;
+.container {
+    width: 200px;
+    height: 200px;
+    perspective: 700px;
+    /* position: relative; */
+    margin: 250px auto;
+}
+.box {
+    width: 100%;
     height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+}
+.side {
     position: absolute;
-    top: 4 0%;
-    left: 50%;
-    background: transparent url('./spritesheet.png');
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color:rgba(30,67,125,.6);
+    ;
+}
+.side--front{
+    transform: rotateY(0) translateZ(100px);
+    background-color: cornflowerblue;
+}
+.side--left{
+    transform: rotateY(-90deg) translateZ(100px);
+    background-color: green
+}
+.side--top{
+    transform: rotateX(90deg) translateZ(100px);
+    background-color: green
 }
