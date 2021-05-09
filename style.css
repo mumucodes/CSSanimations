@@ -36,3 +36,56 @@
     transform: rotateX(90deg) translateZ(100px);
     background-color: green
 }
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    width: 100%;
+    font-family: impact, sans-serif;
+    font-size: 40px;
+    transition: .5s;
+    text-align: left;
+    padding-left: 20px;
+}
+button:hover{
+    padding-left: 210px;
+}
+.shape {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: -400px;
+    top: -80px;
+    background-color: black;
+    z-index: 10;
+    transition: 1s;
+    animation: float 10s infinite;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+}
+button:nth-child(1):hover~.shape{
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+button:nth-child(2):hover~.shape{
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+
+}
+button:nth-child(3):hover~.shape{
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+button:nth-child(4):hover~.shape{
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+@keyframes float{
+    0%{
+        transform: rotateX(0deg) translateY(0px);
+    }50%{
+        transform: rotateX(3deg) translateY(-20px);
+    }100%{
+        transform: rotateX(00deg) translateY(0px);
+    }
+}
